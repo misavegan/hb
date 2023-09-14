@@ -1,0 +1,403 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*　↑　リセットここまで　*/
+
+/* カラーコード
+#F4BFBF ピンク
+#FFD9C0　オレンジ
+#FAF0D7　黄色
+#8CC0DE　ブルー
+https://colorhunt.co/palette/f4bfbfffd9c0faf0d78cc0de
+*/
+
+body {
+  min-height: 100vh;
+  background-color: #faf0d7;
+  text-align: center;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Robot", sans-serif;
+  color: #796660;
+}
+
+/* Top Image*/
+.responsive {
+  width: 100%;
+  height: auto;
+}
+
+/* Youtube */
+/* 動画全体の横幅を指定するためのdiv */
+.video-wrap {
+  max-width: 50%; /* ここに動画の横幅を指定 */
+  margin: 0 auto; /* Center the video horizontally */
+  padding: 60px 0px 80px 0px;
+}
+
+/* 動画を囲うdiv */
+.video {
+  position: relative;
+  width: 100%; /* 横幅は100%で固定 */
+  height: 0; /* 高さは0にしておく(padding-topで高さを指定するため) */
+  padding-top: 56.25%; /* 高さを指定(16:9) */
+}
+
+/* YouTube埋め込み用のiframe */
+.video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Toggle */
+h3 {
+  font-size: 1em;
+}
+
+.toggle-title {
+  background-color: #ffd9c0;
+  @media (min-width: 375px) {
+    font-size: calc(100% + 100vw * 2 / 375);
+    padding-top: 40px;
+    padding-bottom: 15px;
+  }
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  background-color: #ffd9c0;
+  justify-content: center;
+  gap: 10px; /* グリッドアイテム間の隙間（必要に応じて調整） */
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
+.flex-item {
+  flex: 0 0 calc(33.333% - 10px); /* 3列のグリッド、各列の幅は33.333%、隙間を考慮 */
+  max-width: calc(33.333% - 10px); /* グリッドアイテムの最大幅 */
+  flex-basis: 110px;
+  height: 40px; /* グリッドアイテムの高さ */
+  text-align: center;
+  line-height: 40px; /* 垂直方向の中央揃え */
+  box-sizing: border-box; /* ボックスモデルの設定 */
+}
+
+/* toggle button */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 30px;
+  margin: 5px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #796660;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 5px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #8cc0de;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(50px);
+  -ms-transform: translateX(50px);
+  transform: translateX(50px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+#sectionA {
+  display: block;
+}
+
+#sectionB {
+  display: none;
+}
+
+/* Roulette Lunch & お茶*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #faf0d7;
+}
+
+.wrapper {
+  background-color: #ffd9c0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 60px;
+  border: none;
+  background-color: #ffd9c0;
+  border-radius: 30px;
+}
+
+.container .spinBtn {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  border-radius: 50%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #796660;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+  user-select: none;
+}
+/*真ん中*/
+.container .spinBtn::before {
+  content: "";
+  position: absolute;
+  top: -28px;
+  width: 20px;
+  height: 30px;
+  background: #fff;
+  clip-path: polygon(50% 0%, 18% 100%, 85% 100%);
+}
+
+.container .wheel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #796660;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: transform 3s ease-in-out;
+}
+
+.container .wheel .number {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  background: var(--clr);
+  transform-origin: bottom right;
+  transform: rotate(calc(60deg * var(--i)));
+  clip-path: polygon(0 0, 56% 0, 100% 100%, 0 56%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+}
+
+.container .wheel .number span {
+  position: relative;
+  transform: rotate(45deg);
+  font-size: 1.1em;
+  font-weight: 500;
+  color: #796660;
+}
+
+.container .wheel .number span::after {
+  position: relative;
+  transform: rotate(45deg);
+  font-size: 1.1em;
+  font-weight: 500;
+  color: #796660;
+}
+
+/*  Footer */
+.footer {
+  background-color: #796660;
+  font-family: Robot, sans-serif;
+  padding: 4.5%;
+}
+
+.footer p {
+  padding-bottom: 15px;
+  color: white;
+}
